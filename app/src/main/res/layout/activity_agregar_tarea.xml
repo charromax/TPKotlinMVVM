@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.example.tpkotlinmvvm.ui.viewmodel.TareaViewModel" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F4F4"
+        tools:context=".ui.AgregarTarea">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="198dp"
+                android:background="@drawable/gradient_background"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:shadowColor="@android:color/darker_gray"
+                    android:text="@string/agregar_trabajo"
+                    android:layout_margin="20dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSubHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/darker_gray"
+                    android:text="@string/fecha_entrega" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@android:color/darker_gray" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:background="@drawable/item_background"
+                android:layout_marginTop="-60dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/tituloTrabajo"
+                    android:text="@={myViewModel.inputTitulo}"
+                    android:layout_margin="10dp"
+                    android:textColor="@android:color/black" />
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/materia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/materiaTrabajo"
+                    android:entries="@array/materias"
+                    tools:setOnItemSelectedListener="@{myViewModel.clicksListener}"
+                    android:layout_margin="10dp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/fechaEntrega"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@={myViewModel.inputFechaEntrega}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/entregaTrabajo"
+                    android:layout_margin="10dp"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    android:text="@={myViewModel.inputDescripcion}"
+                    android:layout_gravity="start"
+                    android:hint="@string/decripcionTrabajo"
+                    android:layout_margin="10dp"
+                    android:textColor="@android:color/black" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/saveFab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:src="@drawable/ic_save_tarea"
+            android:contentDescription="@string/agregar_trabajo"
+            android:layout_margin="16dp" />
+    </FrameLayout>
+</layout>

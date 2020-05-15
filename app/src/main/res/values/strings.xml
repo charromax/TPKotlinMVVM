@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Trabajos Pendientes</string>
+    <string name="subtitulo">Presiona el titulo para ver detalles</string>
+    <string name="agregar_trabajo">Agregar trabajo</string>
+    <string name="fecha_entrega">Qué, para quién y cuándo</string>
+
+    <string name="tituloTrabajo">Qué?</string>
+    <string name="materiaTrabajo">Para quién?</string>
+    <string name="entregaTrabajo">Cuándo?</string>
+    <string name="decripcionTrabajo">Detalles</string>
+
+    <string name="icon_nuevo">/@drawable//ic_save_tarea</string>
+    <string name="icon_update">/@drawable//ic_edit_tarea</string>
+
+    <string name="pendientes_cero">No hay tareas pendientes</string>
+
+    <array name="materias">
+        <item>Inglés I</item>
+        <item>Comunicación</item>
+        <item>Administración</item>
+        <item>Matemática</item>
+        <item>Sistemas Operativos</item>
+        <item>Lógica y Est. de Datos</item>
+        <item>Tec. de la Información</item>
+        <item>Ing. de Software I</item>
+    </array>
+
+
+</resources>
